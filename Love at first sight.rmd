@@ -26,16 +26,28 @@ this assignment.  For each question supply graphical evidence, numerical summari
 # Your First Question  
 
 ### Do people who believe in Love at First sight also tend to believe in Life on other planets?
-
-  
+Graphical display
+```{r}
+barchartGC(~love_first + extra_life,data=mydata, xlab = "love @ first sight")
+```
+People that believe in love in first sight, also tend to belive in ET?
+$H_O$: there is no relation between belief in first sight, and belief in ET.
+$H_A$: There is a belive in love and first sight and ET.  
   
     
 # Your second Question  
 
 ### Is there a difference between boys and girls with respect to belief in life on other planets?
+Numerical summary
+```{r}
+table1 <- xtabs(~love_first + sex, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
   
  
  
 # Your last Question   
+
 
 ### Is there a difference between boys and girls with respect to belief in love at First sight?
