@@ -38,9 +38,14 @@ $H_A$: There is a belive in love and first sight and ET.
 # Your second Question  
 
 ### Is there a difference between boys and girls with respect to belief in life on other planets?
+Graphical Display
+```{r}
+barchartGC(~extra_life + sex,data=mydata, xlab = "Extra life")
+```
+
 Numerical summary
 ```{r}
-table1 <- xtabs(~love_first + sex, data=mydata)
+table1 <- xtabs(~extra_life + sex, data=mydata,)
 rowPerc(table1)
 colPerc(table1)
 ```
