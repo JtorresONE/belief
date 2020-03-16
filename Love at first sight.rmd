@@ -33,6 +33,22 @@ barchartGC(~love_first + extra_life,data=mydata, xlab = "love @ first sight")
 People that believe in love in first sight, also tend to belive in ET?
 $H_O$: there is no relation between belief in first sight, and belief in ET.
 $H_A$: There is a belive in love and first sight and ET.  
+
+Numerical Summary
+```{r}
+table1 <- xtabs(~love_first + extra_life, mydata)
+rowPerc(table1)
+colPerc(table1)
+
+```
+Inference
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+P> .05 --> REJECT HO
   
     
 # Your second Question  
@@ -42,6 +58,7 @@ Graphical Display
 ```{r}
 barchartGC(~extra_life + sex,data=mydata, xlab = "Extra life")
 ```
+$N_O$ There is no difference between sex and the believe of extra life in other planets.
 
 Numerical summary
 ```{r}
@@ -49,10 +66,41 @@ table1 <- xtabs(~extra_life + sex, data=mydata,)
 rowPerc(table1)
 colPerc(table1)
 ```
-  
- 
+Inference
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+P> .05 –> REJECT HO
  
 # Your last Question   
 
 
 ### Is there a difference between boys and girls with respect to belief in love at First sight?
+
+Graphical Display
+
+```{r}
+barchartGC(~sex + love_first ,mydata, xlab = "sex")
+```
+Graph illustration of sex vs belief in love at first sight
+
+$H_O$ There is no difference between boys and girls in belief of love in first sight
+
+Numerical
+```{r}
+table1 <- xtabs(~sex + love_first, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
+
+
+Inference
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+P> .05 –> REJECT HO
+
